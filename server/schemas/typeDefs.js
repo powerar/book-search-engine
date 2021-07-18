@@ -11,6 +11,11 @@ const typeDefs = gql`
     link: String
   }
 
+  type Auth {
+    token: ID
+    user: User
+  }
+
   type User {
     _id: ID!
     username: String
@@ -19,19 +24,11 @@ const typeDefs = gql`
     savedBooks: [Book]
   }
 
-  type Auth {
-    token: ID!
-    user: User
-  }
-
   type Query {
     me: User
-    users: [User]
-    savedBooks(username: String): [Book]
   }
 
   input savedBook {
-    userId: String
     bookId: String
     authors: [String]
     description: String
@@ -44,7 +41,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     saveBook(input: savedBook): User
-    removeBook(_id: ID, bookId: ID): User
+    removeBook(bookId: ID): User
   }
 `;
 
