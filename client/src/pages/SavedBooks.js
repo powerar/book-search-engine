@@ -32,6 +32,8 @@ const SavedBooks = () => {
       });
 
       removeBookId(bookId);
+
+      return { data };
       
     } catch (e) {
       console.error(e);
