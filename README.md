@@ -1,5 +1,5 @@
 # Book Search Engine
-A Google Books API search engine built with GraphQL and Apollo server. This application was built with the MERN stack, with a React front-end, MongoDB database, and Node.js/Express.js server API.
+A Google Books API search engine. This application was built with the MERN stack, with a React front-end, MongoDB database, and Node.js/Express.js server API.
 
 # Built With
 * React
