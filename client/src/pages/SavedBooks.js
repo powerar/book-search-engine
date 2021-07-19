@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   Jumbotron,
   Container,
@@ -32,10 +32,12 @@ const SavedBooks = () => {
       });
 
       removeBookId(bookId);
+      
     } catch (e) {
       console.error(e);
     }
   };
+
 
   // if data isn't here yet, say so
   if (loading) {
