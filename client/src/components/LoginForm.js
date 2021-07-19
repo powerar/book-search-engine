@@ -22,7 +22,6 @@ const LoginForm = () => {
     
     
     const form = event.currentTarget;
-    console.log(form.checkValidity());
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
@@ -35,7 +34,6 @@ const LoginForm = () => {
 
       Auth.login(data.login.token);
     } catch (e) {
-      console.log(e);
       setShowAlert(true);
     }
 

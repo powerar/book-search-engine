@@ -25,7 +25,6 @@ const resolvers = {
       return { token, user };
     },
     login: async (parent, { email, password }) => {
-      console.log('route hit');
       const user = await User.findOne({ email });
 
       if (!user) {
@@ -39,12 +38,9 @@ const resolvers = {
       }
 
       const token = signToken(user);
-      console.log('back-end', token);
-      console.log(user, token);
       return { token, user };
     },
     saveBook: async (parent, args, context) => {
-      console.log('user context', context.user);
       if (context.user) {
         const user = await User.findByIdAndUpdate(
           { _id: context.user._id },
